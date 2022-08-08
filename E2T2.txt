@@ -1,3 +1,0 @@
-Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
-
-Bonus - provide recommendations on how to remediate the vulnerabilities.

@@ -1,0 +1,11 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+S3 buckets do not block public access. They do not use VPC endpoints either. In addition, encryption and versioning are disabled.
+
+# Poor practice 2
+InstanceRole has full access to S3 and violate least privilege access.
+
+# Poor practice 3
+The web service instance is in the public subnet, as opposed to the private subnet.
+

@@ -1,0 +1,40 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+- Checkov
+- TFLint
+- Terrafirma
+- Accurics
+- CloudSploit
+
+### Example vulnerability
+- Use operating system or container images from untrusted sources
+- Unsecure default configurations that could lead to data exposure
+
+##Scan AMI’s or containers for OS vulnerabilities
+- Anchore
+- Clair
+- Dagda 
+- OpenSCAP
+- Sysdig Falco
+
+### Example vulnerability
+- Access and authorization. With any application or operating system, access and authorization weaknesses can be exploited if not keeping current with security patches.
+- API server access. The API server is an automated front end to the orchestrator. It is a front door configured to let in only certain applications that possess the right credentials. Faked or spoofed credentials can cause the door to swing wide open, opening the containers up to illicit access.
+- Image vulnerabilities. Images are the DNA of the orchestrator; they're the recipes from which containers are built. A clever hacker can infiltrate the images with malware, thereby generating "poisoned containers" that can cause harm. A really clever hacker can also adjust the health-monitoring components of the orchestrator so it won't detect those poisoned containers. Image registries, databases of all stored images, can also be corrupted, hiding the presence of infiltrated images. 
+- Inter-container network traffic. Containers communicate with one another, typically over an encrypted link. The encryption can be a double-edged sword, however. If a container is compromised, it can spread malware to another container, and the encryption will hide the malware transfer as well as legitimate data flows.
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+- AWS Config
+- AWS Inspector
+- AWS Security Hub
+- AWS Guard Duty
+
+### Example vulnerability
+- Misconfigured Cloud Storage
+- Insecure APIs
+- Loss or Theft of Intellectual Property
+- Compliance Violations and Regulatory Actions
+- Loss of Control Over End-User Actions
+- Poor Access Management
+- Contractual Breaches with Customers or Business Partners

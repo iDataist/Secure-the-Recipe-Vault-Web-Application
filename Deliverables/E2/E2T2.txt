@@ -1,0 +1,26 @@
+1. Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+    - Config:
+        - securityhub-restricted-ssh-3d50734e
+        - securityhub-restricted-rdp-be509775
+        - securityhub-vpc-flow-logs-enabled-95435021
+        - securityhub-s3-bucket-logging-enabled-f42a70b3
+
+    - Security Hub:
+        - Ensure no security groups allow ingress from 0.0.0.0/0 to port 22
+        - Ensure no security groups allow ingress from 0.0.0.0/0 to port 3389
+
+    - Inspector:
+        - No password complexity mechanism or restrictions are configured on instance i-08f44d6278ea87d2a in your assessment target. This allows users to set simple passwords, thereby increasing the chances of unauthorized users gaining access and misusing accounts.
+        - Instance i-08f44d6278ea87d2a is configured to support password authentication over SSH. Password authentication is susceptible to brute-force attacks and should be disabled in favor of key-based authentication where possible.
+        - Minimum length for passwords is not configured on instance i-08f44d6278ea87d2a in your assessment target.
+        - Instance i-08f44d6278ea87d2a is configured to allow users to log in with root credentials over SSH, without having to use a command authenticated by a public key. This increases the likelihood of a successful brute-force attack.
+        - On instance i-08f44d6278ea87d2a, process 'python3' is listening on TCP port 5000 which is reachable from the internet
+        - Aggregate network exposure: On instance i-08f44d6278ea87d2a, ports are reachable from the internet through ENI eni-038f345ffcc02e844 and security group sg-07e99d4f944dc4854
+        - On instance i-08f44d6278ea87d2a, process 'sshd' is listening on TCP port 22 which is associated with 'SSH' and is reachable from the internet
+        - On instance i-08f44d6278ea87d2a, process 'systemd-network' is listening on UDP port 68 which is associated with 'DHCP' and is reachable from the internet
+
+2. Provide recommendations on how to remediate the vulnerabilities.
+    - Remove SSH Vulnerability on the Application Instance
+    - Apply Network Controls to Restrict Application Server Traffic
+    - Least Privilege Access to S3
+    - Apply Default Server-side Encryption to the S3 Bucket
